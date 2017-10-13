@@ -1,18 +1,50 @@
+# Flutter Engine Development
+# ==========================
+#
+# docker run --cap-add=SYS_PTRACE --rm -it -v `pwd`:/WorkDir -w /WorkDir chinmaygarde/flutter_docker /bin/bash
+
 FROM ubuntu:rolling
+MAINTAINER Chinmay Garde, chinmaygarde@gmail.com
 
 # Update dependencies.
 RUN apt-get update
-RUN apt-get install -y locales
-RUN apt-get install -y build-essential
-RUN apt-get install -y cmake
-RUN apt-get install -y libgles2-mesa-dev
-RUN apt-get install -y libsdl2-dev
-RUN apt-get install -y ninja-build
-RUN apt-get install -y gdb
-RUN apt-get install -y git
-RUN apt-get install -y man
-RUN apt-get install -y ccache
-RUN apt-get install -y valgrind
+
+# Install dependencies.
+RUN apt-get install -y         \
+      autoconf                 \
+      build-essential          \
+      ccache                   \
+      checkinstall             \
+      cmake                    \
+      curl                     \
+      gdb                      \
+      git                      \
+      golang                   \
+      libbz2-dev               \
+      libc6-dev                \
+      libgdbm-dev              \
+      libgles2-mesa-dev        \
+      libglib2.0-dev           \
+      libncursesw5-dev         \
+      libreadline-gplv2-dev    \
+      libsdl-dev               \
+      libsdl2-dev              \
+      libsqlite3-dev           \
+      libssl-dev               \
+      libtool                  \
+      locales                  \
+      man                      \
+      ninja-build              \
+      python-pip               \
+      python2.7                \
+      python2.7-dev            \
+      ssh                      \
+      texinfo                  \
+      tk-dev                   \
+      unzip                    \
+      wget                     \
+      valgrind
+
 
 # Fix locale.
 RUN rm -rf /var/lib/apt/lists/*
