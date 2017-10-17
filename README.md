@@ -7,4 +7,4 @@ This image does not contain any of the engine or framework source code. It does 
 
 To work on your source in the Linux environment, use the following command:
 
-`docker run --cap-add=SYS_PTRACE --rm -it -v `pwd`:/CurrentDirectory -w /CurrentDirectory chinmaygarde/flutter_docker /bin/bash`
+    docker run --cap-add=SYS_PTRACE --rm -it -v `pwd`:/CurrentDirectory -w /CurrentDirectory chinmaygarde/flutter_docker /bin/bash
